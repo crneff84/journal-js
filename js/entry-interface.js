@@ -15,6 +15,7 @@ $(document).ready(function() {
     var entryInput = stringInput.toLowerCase();
     var newEntry = new Entry();
     var output = newEntry.letterCount(entryInput);
-    $('#results').append("<p> Number of Vowels: " + output + "</p>");
+    $('#results').append("<p> Number of Vowels: " + output[0] + "</p>");
+    $('#results').append("<p> Number of Consonants: " + output[1] + "</p>");
   });
 });
