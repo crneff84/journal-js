@@ -18,4 +18,12 @@ $(document).ready(function() {
     $('#results').append("<p> Number of Vowels: " + output[0] + "</p>");
     $('#results').append("<p> Number of Consonants: " + output[1] + "</p>");
   });
+
+  $('#journal').submit(function(event) {
+    event.preventDefault();
+    var entryInput = $('#entry').val();
+    var newEntry = new Entry();
+    var output = newEntry.getTeaser(entryInput);
+    $('#results').append("<p> Teaser: " + output + "</p>");
+  });
 });

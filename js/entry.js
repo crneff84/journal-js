@@ -26,4 +26,14 @@ Entry.prototype.letterCount = function(entry) {
   return charCount;
 };
 
+Entry.prototype.getTeaser = function(entry) {
+  var wordCount = entry.split(" ");
+  var teaser = [];
+  for (var i = 0; i < 8; i++) {
+    teaser.push(wordCount[i]);
+  }
+  var result = teaser.join(" ");
+  return result;
+};
+
 exports.entryModule = Entry;

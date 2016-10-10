@@ -19,6 +19,14 @@ $(document).ready(function() {
     $('#results').append("<p> Number of Vowels: " + output[0] + "</p>");
     $('#results').append("<p> Number of Consonants: " + output[1] + "</p>");
   });
+
+  $('#journal').submit(function(event) {
+    event.preventDefault();
+    var entryInput = $('#entry').val();
+    var newEntry = new Entry();
+    var output = newEntry.getTeaser(entryInput);
+    $('#results').append("<p> Teaser: " + output + "</p>");
+  });
 });
 
 },{"./../js/entry.js":2}],2:[function(require,module,exports){
@@ -48,6 +56,16 @@ Entry.prototype.letterCount = function(entry) {
   var charCount = [vowelCount, consonantCount];
   console.log(charCount);
   return charCount;
+};
+
+Entry.prototype.getTeaser = function(entry) {
+  var wordCount = entry.split(" ");
+  var teaser = [];
+  for (var i = 0; i < 8; i++) {
+    teaser.push(wordCount[i]);
+  }
+  var result = teaser.join(" ");
+  return result;
 };
 
 exports.entryModule = Entry;
