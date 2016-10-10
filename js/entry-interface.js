@@ -3,6 +3,7 @@ var Entry = require('./../js/entry.js').entryModule;
 $(document).ready(function() {
   $('#journal').submit(function(event) {
     event.preventDefault();
+    $('#results').empty();
     var entryInput = $('#entry').val();
     var newEntry = new Entry();
     var output = newEntry.numberOfWords(entryInput);

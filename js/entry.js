@@ -22,7 +22,6 @@ Entry.prototype.letterCount = function(entry) {
     }
   }
   var charCount = [vowelCount, consonantCount];
-  console.log(charCount);
   return charCount;
 };
 
